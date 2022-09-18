@@ -9,8 +9,6 @@
   font-family: 'Helvetica Neue', Arial, sans-serif;
   color: #000;
 }
-.content {
-}
 /*========Блок Header====================================================*/
 .header {
   height: 100vh;
@@ -21,6 +19,8 @@
   max-height: 756px;
 }
 .logo {
+  width: 228px;
+  height: 32px;
 }
 .logo_place_header {
   position: absolute;
@@ -51,24 +51,19 @@
 .header__link {
   position: relative;
   text-decoration: none;
+  color: #2f80ed;
 }
 .header__link:hover {
   text-decoration: underline;
-}
-.header__link::before {
-  content: "\1F812";
-  position: absolute;
-  top: 0;
-  right: -30px;
-  font-size: 26px;
 }
 .header__main-illustration {
   position: absolute;
   width: 765px;
   height: 608px;
-  bottom: 0;
   right: 0;
+  bottom: 0;
   z-index: 5;
+  object-fit: cover;
 }
 .header__square-pic::before {
   content: "";
@@ -78,6 +73,9 @@
   width: 568px;
   height: 568px;
   background-color: #2f80ed;
+}
+/*========Блок Content====================================================*/
+.content {
 }
 /*========Секция Description====================================================*/
 .description {
@@ -130,7 +128,7 @@
   line-height: 34px;
   font-size: 24px;
   font-weight: 400;
-  margin: 0px 0px 60px 0px;
+  margin: 0 0 60px 0;
 }
 .table {
   display: flex;
@@ -139,6 +137,8 @@
   max-width: 1100px;
   margin: 0px auto 100px auto;
   row-gap: 60px;
+  list-style: none;
+  padding: 0;
 }
 .table__cell {
   flex: 0 1 250px;
@@ -163,15 +163,18 @@
 }
 /*========Секция Feynman========================================================*/
 .feynman {
+  background: url('../images/feynman.png') left bottom / 867px 637px no-repeat;
   background-color: #f2f2f2;
   position: relative;
-  height: 890px;
+  min-height: 890px;
   padding: 100px 0 0 0;
+  box-sizing: border-box;
 }
 .feynman__title {
   position: relative;
   z-index: 4;
-  width: 648px;
+  width: 100%;
+  max-width: 648px;
   line-height: 1.15;
   font-size: 120px;
   font-weight: 600;
@@ -195,15 +198,7 @@
   line-height: 51px;
   font-size: 36px;
   font-weight: 400;
-}
-.feynman__link:hover {
-  text-decoration: underline;
-}
-
-.feynman__image {
-  position: absolute;
-  left: 0;
-  bottom: 0;
+  color: #2f80ed;
 }
 /*========Секция Kaufman========================================================*/
 .kaufman {
@@ -213,52 +208,35 @@
   overflow: hidden;
 }
 .section-title_theme_dark {
-  position: relative;
-  text-align: center;
-  min-width: 60%;
-  line-height: 1.15;
-  font-size: 60px;
-  font-weight: 600;
-  margin: 90px 0px 20px 0px;
-  z-index: 5;
+  margin-top: 90px;
 }
 .section-subtitle_theme_dark {
-  min-width: 60%;
-  text-align: center;
-  line-height: 34px;
-  font-size: 24px;
-  font-weight: 400;
-  margin: 0 0 80px 0;
+  margin-bottom: 80px;
 }
 .table_theme_dark {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
   row-gap: 80px;
-  max-width: 1100px;
-  margin: 0px auto 90px auto;
+  margin-bottom: 90px;
 }
 .table__cell_theme_dark {
   flex: 0 1 200px;
   z-index: 5;
 }
 .table__heading_theme_dark {
-  line-height: 1.15;
-  font-size: 24px;
-  font-weight: 600;
-  margin-bottom: 20px;
+  margin: 0px 0px 20px 0px;
 }
 .table__text_theme_dark {
-  line-height: 1.2;
-  font-size: 18px;
-  font-weight: 400;
+  margin: 0;
 }
 .kaufman__triangle {
   position: absolute;
-  right: -210px;
   top: 0;
-  width: 877px;
-  height: 877px;
+  right: -210px;
+  background-image: url('../images/kaufman-triangle.svg');
+  background-size: cover;
+  background-position: top right;
+  background-repeat: no-repeat;
+  min-width: 877px;
+  min-height: 877px;
 }
 /*========Блок Footer===========================================================*/
 .footer {
@@ -267,22 +245,24 @@
   min-height: 350px;
 }
 .footer__columns {
+  box-sizing: border-box;
   display: flex;
   justify-content: space-between;
   width: 90%;
   margin: 0px auto;
   padding: 60px 0 40px 0;
 }
+.footer__column {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 .footer__column_content_copyright {
-  position: relative;
   flex-basis: 711px;
 }
 .logo_place_footer {
 }
 .footer__author {
-  position: absolute;
-  left: 0;
-  bottom: -18px;
   line-height: 25px;
   font-size: 18px;
   font-weight: 400;
@@ -299,6 +279,7 @@
 .footer__column-links {
   display: flex;
   flex-direction: column;
+  margin-bottom: 16px;
 }
 .footer__column-links_list {
   list-style: none;
